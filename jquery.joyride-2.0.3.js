@@ -342,13 +342,10 @@
       },
 
       set_target : function () {
-        var cl = settings.$li.attr('data-class'),
-            id = settings.$li.attr('data-id'),
+        var selector = settings.$li.attr('data-selector'),
             $sel = function () {
-              if (id) {
-                return $(settings.document.getElementById(id));
-              } else if (cl) {
-                return $('.' + cl).first();
+              if (selector) {
+                return $(selector).first();
               } else {
                 return $('body');
               }
